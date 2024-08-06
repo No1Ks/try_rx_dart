@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ColorSource {
+class ColorsSource {
   static const _colors = [
     Colors.red,
     Colors.orange,

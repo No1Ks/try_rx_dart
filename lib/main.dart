@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:try_rx_dart/playground.dart';
+import 'package:try_rx_dart/playground/playground.dart';
 
 void main() {
   runApp(const _App());
