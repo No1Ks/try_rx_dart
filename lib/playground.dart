@@ -31,15 +31,13 @@ class _PlaygroundState extends State<Playground> {
                 StreamBuilder<Color>(
                   stream: ColorSource.stream(),
                   builder: (context, color) {
-                    return Center(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: color.data,
-                          shape: BoxShape.circle,
-                        ),
-                        width: dimension,
-                        height: dimension,
+                    return Container(
+                      decoration: BoxDecoration(
+                        color: color.data,
+                        shape: BoxShape.circle,
                       ),
+                      width: dimension,
+                      height: dimension,
                     );
                   },
                 ),
@@ -47,17 +45,15 @@ class _PlaygroundState extends State<Playground> {
                 StreamBuilder<IconData>(
                   stream: IconsSource.stream(),
                   builder: (context, icon) {
-                    return Center(
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(color: Colors.grey),
-                          shape: BoxShape.circle,
-                        ),
-                        width: dimension,
-                        height: dimension,
-                        child: Icon(icon.data),
+                    return Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(color: Colors.grey),
+                        shape: BoxShape.circle,
                       ),
+                      width: dimension,
+                      height: dimension,
+                      child: Icon(icon.data),
                     );
                   },
                 ),
