@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ part 'parts/items.dart';
 part 'parts/map_merge_view.dart';
 part 'parts/plain_view.dart';
 part 'parts/race_view.dart';
+part 'parts/subject_view.dart';
 part 'parts/zip_view.dart';
 
 class Playground extends StatefulWidget {
@@ -28,6 +30,18 @@ class _PlaygroundState extends State<Playground> {
   static const dimension = 50.0;
 
   @override
+  void initState() {
+    ColorsSource.startTimer();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    ColorsSource.killTimer();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.white,
@@ -44,6 +58,8 @@ class _PlaygroundState extends State<Playground> {
             _BufferView(dimension: dimension),
             _Divider(),
             _RaceView(dimension: dimension),
+            _Divider(),
+            _SubjectView(dimension: dimension),
             _Divider(),
           ],
         ),
